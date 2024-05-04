@@ -1,0 +1,6 @@
+THIS IS NOT SUPPORTED IN MULTITHREADING IT DOES'NT MAKE ANY KIND OF SENSE
+
+first it will execute firxt task then later second task.but second task has to wait untill first task is 
+executed its execution completely.
+
+this way can't achieve any kind of efficincy

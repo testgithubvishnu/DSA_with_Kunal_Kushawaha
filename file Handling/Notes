@@ -1,0 +1,27 @@
+FILE HANDLING IN JAVA:
+========================
+
+Streams->sequence of data ex..file,audio,images etc.
+#types: 1] byte Stream
+             a)Input
+             b)Output
+        2] character
+              a)Reader
+              b)Writer
+
+    Perform input/output with this Streams   
+    Abstraction that Java provides
+    connected to physical devices like keyboard
+
+java impelements these within class hierachy in java.io package
+
+# Systen.in -> 'in' is type InputStream  ->keyboard
+  [PrintStream]
+# Systen.out -> 'out' is type OutputStream  ->console
+# Systen.error -> error stream  -> console
+
+
+
+
+
+

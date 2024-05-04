@@ -1,0 +1,4 @@
+ hashing there is a hash function that maps
+  keys to some values. But these hashing
+   function may lead to collision that is
+    two or more keys are mapped to same value

@@ -1,0 +1,249 @@
+#creating packages:
+======================
+
+syntax;
+package package_name;
+
+to create sub package:
+package main_package.sub_package;
+
+compile for single file:
+javac -d . file_name.java
+
+compile for all files at a time:
+javac -d . *.java
+
+to run java package programme
+java package_name.file_name
+
+to run sub package programme
+java main_package.sub_package.file_name
+
+--------------------------------------------------------------
+
+# multi threading:
+======================
+A multithreaded program contains two or more parts that can run
+concurrently. Each part of such a program is called a thread
+
+#Thread class contains these:
+
+Method           Meaning
+Naming method:
+getName       Obtain a thread’s name.
+setName       Set a thread’s name.
+
+Priority Based:
+getPriority   Obtain a thread’s priority.
+setPriority   Set a thread’s priority.
+
+Basic Methods:
+isAlive       Determine if a thread is still running.
+join          Wait for a thread to terminate.
+run           Entry point for the thread.
+start         Start a thread by calling its run Method
+
+Prevent thread execution:
+sleep         Suspend a thread for a period of time
+yield();
+
+Interrupting a thread:
+interrupt()
+isinteruppted()
+interuppted()
+
+to set or get the priority of the threads
+it is an integer value
+priorities ranges from 1-10
+1-MIN_PRIORITY , 10-MAX_PRIORITY,5-NORM_PRIORITY
+
+ 1] public final void setPriority(int n)
+ 2] public final int getPriority()
+
+by default priority of main thread is : 5
+ any other thread i.e child thread inherits the priority of parent class
+
+ Windows does'nt suppoorts priorities i.e setPriority() 
+
+ # SLEEP METHOD
+ -----------------
+ sleep method use to pause execution
+ -whenever we want to use sleep method we also need to handle "InterruptedException"
+
+ - when we use the sleep() method to pause execution.the thread schedular assigns cpu
+   to another thread if any thread exists.
+    So,there is no guarranty that the thread wakes up after the specified time.
+    it's totally depends on thread schedular
+
+
+1] By extending classs thread:
+================================
+by overriding it's run() method
+    run() -> for running a thread
+    start()-> for start the thread
+                 create call to run() method
+
+2] By using runnable interface:
+================================
+  contains only run() method
+
+  if the class implements the Runnable interface, the thread can be 
+  run by passing an instance of the class to a Thread object's constructor 
+  and then calling the thread's start() method:
+
+  # in given above runnable interface method is better to create thread than thread class
+   we can make class as a thread
+
+  #suppose we want to create thread of a class which already extends some other class
+   then we can't extends Thread() class becoz java does'nt support multiple inhetance
+   that's why only one way is to implements runnable interface;
+
+   class A extends B implements runnable
+
+   # DIFFERENT CASES OF EXECUTING THREADS IN JAVA:
+     1] Performing single task from multiple threads
+     2] Performing single task from single threads
+     3] Performing multiple task from multiple threads
+     4] Performing multiple task from single threads
+
+ 
+      
+
+
+====================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+COLLECTION FRAMEWORK : (API)
+set of pre-defined classes and interfaces used to store data
+
+collection:(interface)
+it is single entity of object which can store multiple data
+-it is root interface of collection objects
+
+collections: (Utility class)
+it is Utility class which contains only static methods
+
+framework: represents set of library
+
+# Two main parts:
+1)java.util.Collection:
+  can store data directly,objects(data)
+
+2)java.util.Map:
+we store data in key-value pairs
+======================
+
+COLLECTION:(interface)
+1] List (interface):
+    1.ArrayList  (class)
+    2.LinkedList (class)
+    3.Vector     (Legacy class)  1.0 version
+        1.stack (Legacy class)
+
+2] Set (interface):
+   1. HashSet (class)
+         1.LinkedHashset
+
+   2.SortedSet (interface)
+         1.NavigateSet
+         1.Treeset (class)
+
+3] Queue (interface):
+    1.Priority Queue
+    2.deque
+       1.array deque
+
+-------------------------------------------------------------------------------------------
+   
+  # MAP :
+   1] HashMap (class)
+        1.LinkedHashMap
+
+   2] SortedMap (interface)
+        1.NavigableMap
+        1.treeMap
+
+   3] Hashtable (class)
+   4] Dictionary (class)
+    
+
+
+#Legacy class:
+collection framework was not present in early version of java.
+instead several classes and one interface to store object.
+
+when collection framework comes ,these old classes were re-engineered to 
+support collection framework.these old classes are Legacy classes.
+
+--------------------------------------------------------------------------------------
+# LIST:
+
+1] ARRAYLIST:
+==============
+   used to create dynamic ARRAYLIST
+
+   ArrayList arr = new ArrayList() -> to create empty ArrayList
+   ArrayList arr = new ArrayList(N)-> to initialize size of ArrayList
+
+   # operation on arrayist:
+      1] adding elements:
+         obj.add();  -> to add elements in array
+        
+          add(int index,Object)
+          add(Object)
+           list.add(2, 3); ->add at third position
+
+      2] changing element:
+         set(index , object) 
+
+      3] remove element:
+          obj.remove(index);
+
+      4] iterating arrayist:
+         using for loop with get() method
+
+         get() also used to get elementsat specific position
+
+  
+2] Linked list:
+==================
+      This class is an implementation of the LinkedList data structure which is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part.
+
+          ARRAY VS COLLECTION FRAMEWORK
+ARRAY                            |         
+1) can store primitive & non-primitive data       
+2)homogenius type of data
+3)size is fixed
+4)array is inbuilt feture of java .we have to develop algorithms
+
+
+ COLLECTION FRAMEWORK
+1) only contain non-primitive  type of data     
+2)hetrogenious type of data
+3)size is dynamic can be modified
+4)it is API which provide pre-defined classes & interfaces
+
+
+#COLLECTION :
+collection is an interface which is present in the java.util.* package
+present in 1.2 version of java
+
+syntax:
+public interface Collection<E> extends Iterable <E>
+{
+   methods
+}
+
+#methods in collection interface:
+public boolean add(object o)
+public boolean addAll(collection c)
+
+
+Load Factor= current size/ capacity
+if Load Factor > 0.7  System doubles the size of array 
+
+
+# Arraylist is synchronized where Vector is not synchronized
+
+
+
